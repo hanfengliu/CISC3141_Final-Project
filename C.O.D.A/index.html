@@ -22,7 +22,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,13 +45,80 @@
             <div class="col-xl-7">
                 <div class="text-center text-white">
                     <!-- Page heading-->
-                    <form>
+                
+                    <form class= "form-horizontal">
                         <div class="form-group">
-                            <div class="col">
-                                <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Type Here"
-                                     />
-                        </div>
-                        <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Search</button>
+                            <div class="col form-inline">                               
+                               <div class="input-group mb-3">
+
+                                 <div class="input-group-prepend">
+                                      <span class="input-group-text" id="Year">Year:</span>
+                                     </div>
+                                <input type="number" class="form-control" placeholder="Year" min="2007" max="2014" aria-label="Year"
+                                     aria-describedby="basic-addon1">
+                                    </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="Race">Race:</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Race" aria-label="Race"
+                                        aria-describedby="basic-addon1">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="LeadingCause"> Leading Cause:</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Leading Cause"  aria-label="Leading Cause"
+                                        aria-describedby="basic-addon1">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="Gender">Sex:</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Sex" m aria-label="Sex"
+                                        aria-describedby="basic-addon1">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="Age">Age:</span>
+                                    </div>
+                                    <input type="number" class="form-control" placeholder="Age" min="2007" max="2014" aria-label="Age"
+                                        aria-describedby="basic-addon1">
+                                </div>
+ 
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="Year">Year:</span>
+                                    </div>
+                                    <input type="number" class="form-control" placeholder="Year" min="2007" max="2014" aria-label="Year"
+                                        aria-describedby="basic-addon1">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="Year">Min and Max Deaths:</span>
+                                    </div>
+                                 
+                                    <div class="row">
+                                        
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Min Deaths" min="0" max="7050" aria-label="Minimum Deaths">
+                                        </div>
+                                        
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Max Deaths" min="0" max="7050" aria-label="Minimum Deaths">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    
+                                
+                             </div>
+                        <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Search</button>
                         </div>
                
                     </form>
