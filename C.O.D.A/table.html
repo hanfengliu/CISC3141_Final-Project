@@ -10,18 +10,14 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <style>
+            over-flow-y: hidden;
+        </style>
 </head>
 
 <body>
-    <div class="row">
-        <div class = "col">
-            <div class = "card card-body">
-                <input id ="search-input" class = "form-control" type = "text">
-            </div>
-
-        </div>
-    </div>
     <table class="table table-striped">
+        <input id="return" type="button" value="Return" class="btn btn-primary btn-block" style="width: 100%; margin: 0.5rem;">
         <tr class = "bg-info">
             <th>Cause of death</th>
             <th>Ethnicity</th>
@@ -32,55 +28,10 @@
         <tbody id="myTable">
 
         </tbody>
-
     </table>
-    <script>
-        jsondata = [];
-        searchedData=[];
-        //this method of sifting through the data takes a while the more datapoints it shows, so early on it might take some time for the table to load
-        $('#search-input').on('keyup',function(){
-            value =$(this).val()
-            console.log(value)
-            searchedData = searchTable(value,jsondata)
-            buildTable(searchedData)
-        })
-        
-        $.ajax({
-            method : 'GET',
-            url:'https://data.cityofnewyork.us/resource/jb7j-dtam.json',
-            success:function(response){
-                jsondata = response
-                buildTable(jsondata)
-                console.log(response)
-            }
-
-        })
-        function buildTable(data){
-            table = document.getElementById('myTable')
-            table.innerHTML = ''
-            for(i=0;i<data.length;i++){
-                row = `<tr>
-                            <td>${data[i].leading_cause}</td>
-                            <td>${data[i].race_ethnicity}</td>
-                            <td>${data[i].sex}</td>
-                            <td>${data[i].deaths}</td>
-                            <td>${data[i].year}</td>
-                        </tr>`
-                        table.innerHTML += row;
-            }
-        }
-        function searchTable(value,rawdata){
-            data = [];
-            for(i=0;i<rawdata.length;i++){
-                value = value.toLowerCase()
-                cod = rawdata[i].leading_cause.toLowerCase()
-                if(cod.includes(value)){
-                    data.push(rawdata[i])
-                }
-            }
-            return data
-        }
-    </script>
+    <script src="js/search.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="init.js"></script>
 </body>
 
 </html>
